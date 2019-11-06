@@ -3,20 +3,12 @@
         <title>First f blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">First f blog</a></h1>
-        </div>
-
-        <div>
-            <p>published: 30.11.2019, 12:24</p>
-            <h2><a href="">1st</a></h2>
-            <p>Sample text number 1</p>
-        </div>
-
-        <div>
-            <p>published: 30.11.2019, 12:24</p>
-            <h2><a href="">2nd</a></h2>
-            <p>Sample text number 2</p>
-        </div>
+      {% for post in posts %}
+          <div>
+              <p>published: {{ post.published_date }}</p>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+      {% endfor %}
     </body>
 </html>
